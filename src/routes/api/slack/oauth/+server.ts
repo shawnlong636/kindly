@@ -1,5 +1,5 @@
 import type { RequestHandler } from './$types';
-import { installProvider } from '$lib/slack';
+// import { installProvider } from '$lib/slack';
 
 export const GET: RequestHandler = async ({ url }) => {
 	try {
@@ -8,15 +8,15 @@ export const GET: RequestHandler = async ({ url }) => {
 			return new Response(JSON.stringify({ error: 'Missing code parameter' }), { status: 400 });
 		}
 
-		const response = await installProvider.fetchOAuthAccess({ code });
-
-		if (!response.access_token) {
-			return new Response(JSON.stringify({ error: 'Failed to retrieve access token' }), {
-				status: 500
-			});
-		}
-
 		// TODO: Add later
+		// const response = await installProvider.fetchOAuthAccess({ code });
+
+		// if (!response.access_token) {
+		// 	return new Response(JSON.stringify({ error: 'Failed to retrieve access token' }), {
+		// 		status: 500
+		// 	});
+		// }
+
 		// const {
 		// 	access_token: accessToken,
 		// 	team_id: teamId,
