@@ -1,0 +1,10 @@
+model SlackOAuth {
+    id           String   @id @default(cuid())
+    teamId       String   @unique
+    accessToken  String
+    botUserId    String
+    authedUserId String
+    scope        String
+    createdAt    DateTime @default(now())
+    updatedAt    DateTime @updatedAt
+}
